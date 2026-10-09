@@ -1,91 +1,134 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta name="description" content="Contact Alagappan to discuss projects, learning, and collaboration.">
     <title>Contact | Alagappan's Portfolio</title>
-    <meta name="description" content="Get in touch with Alagappan through his personal portfolio.">
-
-    <!-- Connects this page to the CSS design -->
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <a href="#main-content" class="skip-link">
-        Skip to main content
-    </a>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    <header>
-        <nav aria-label="Main navigation">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="projects.html">Projects</a>
-            <a href="contact.html" aria-current="page">Contact</a>
+    <header class="site-header">
+        <nav class="navbar" aria-label="Main navigation">
+            <a class="logo" href="index.html">Alagappan<span>.</span></a>
+
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html" aria-current="page">Contact</a>
+            </div>
+
+            <button class="theme-toggle" id="theme-toggle"
+                    type="button" aria-label="Switch to light mode"
+                    aria-pressed="false">
+                ☀️ Light mode
+            </button>
         </nav>
     </header>
 
     <main id="main-content" tabindex="-1">
-        <section aria-labelledby="contact-heading">
-            <h1 id="contact-heading">Contact Me</h1>
-
+        <section class="page-intro section">
+            <p class="eyebrow">LET'S CONNECT</p>
+            <h1>Contact <span>Me</span></h1>
             <p>
-                Thank you for visiting my portfolio!
-                I'm interested in learning, collaborating on projects,
-                and connecting with people who share an interest
-                in technology.
+                Have a question, an idea, or an opportunity to collaborate?
+                Feel free to get in touch.
             </p>
         </section>
 
-        <section aria-labelledby="message-heading">
-            <h2 id="message-heading">Send a Message</h2>
+        <section class="section contact-layout">
+            <div class="contact-info">
+                <h2>Start a conversation</h2>
+                <p>
+                    I'm interested in connecting with people who enjoy
+                    technology, programming, and learning new things.
+                </p>
 
-            <p>
-                Fill in the form below to write a message.
-                A submission service must be connected before
-                messages can be delivered.
-            </p>
+                <div class="contact-detail">
+                    <span aria-hidden="true">💬</span>
+                    <div>
+                        <h3>Collaboration</h3>
+                        <p>Discuss ideas, learning, and projects.</p>
+                    </div>
+                </div>
 
-            <form>
-                <div class="form-group">
-                    <label for="name">Name</label>
+                <div class="contact-detail">
+                    <span aria-hidden="true">💡</span>
+                    <div>
+                        <h3>New opportunities</h3>
+                        <p>Connect about relevant projects and experiences.</p>
+                    </div>
+                </div>
+            </div>
+
+            <form class="contact-form" id="contact-form">
+                <div class="form-field">
+                    <label for="name">Your name</label>
                     <input
                         type="text"
                         id="name"
                         name="name"
                         autocomplete="name"
+                        placeholder="Enter your name"
                         required
                     >
                 </div>
 
-                <div class="form-group">
-                    <label for="email">Email Address</label>
+                <div class="form-field">
+                    <label for="email">Email address</label>
                     <input
                         type="email"
                         id="email"
                         name="email"
                         autocomplete="email"
+                        placeholder="you@example.com"
                         required
                     >
                 </div>
 
-                <div class="form-group">
-                    <label for="message">Your Message</label>
+                <div class="form-field">
+                    <label for="subject">Subject</label>
+                    <input
+                        type="text"
+                        id="subject"
+                        name="subject"
+                        placeholder="What would you like to discuss?"
+                        required
+                    >
+                </div>
+
+                <div class="form-field">
+                    <label for="message">Message</label>
                     <textarea
                         id="message"
                         name="message"
                         rows="5"
+                        placeholder="Write your message here..."
                         required
                     ></textarea>
                 </div>
 
-                <button type="submit">Send Message</button>
+                <button class="button primary-button submit-button" type="submit">
+                    Prepare email
+                </button>
+
+                <p class="form-note">
+                    This demo prepares an email in your email application.
+                    It does not store or send messages through a website server.
+                </p>
+                <p id="form-status" class="form-status" role="status"
+                   aria-live="polite"></p>
             </form>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2026 Alagappan. All rights reserved.</p>
+    <footer class="site-footer">
+        <p>© 2026 Alagappan. All rights reserved.</p>
+        <a href="index.html">Back to home ↑</a>
     </footer>
 </body>
 </html>
