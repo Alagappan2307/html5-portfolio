@@ -1,102 +1,112 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta name="description" content="Alagappan's personal portfolio showcasing skills, projects, and web development learning.">
     <title>Home | Alagappan's Portfolio</title>
-    <meta name="description" content="Explore Alagappan's portfolio, including his interests, technical skills, and web development projects.">
-
-    <!-- Connects this page to the CSS design -->
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <a href="#main-content" class="skip-link">
-        Skip to main content
-    </a>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    <header>
-        <nav aria-label="Main navigation">
-            <a href="index.html" aria-current="page">Home</a>
-            <a href="about.html">About</a>
-            <a href="projects.html">Projects</a>
-            <a href="contact.html">Contact</a>
+    <header class="site-header">
+        <nav class="navbar" aria-label="Main navigation">
+            <a class="logo" href="index.html">Alagappan<span>.</span></a>
+
+            <div class="nav-links">
+                <a href="index.html" aria-current="page">Home</a>
+                <a href="about.html">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <button class="theme-toggle" id="theme-toggle"
+                    type="button" aria-label="Switch to light mode"
+                    aria-pressed="false">
+                ☀️ Light mode
+            </button>
         </nav>
     </header>
 
     <main id="main-content" tabindex="-1">
-        <section aria-labelledby="welcome-heading">
-            <h1 id="welcome-heading">Hi, I'm Alagappan</h1>
+        <section class="hero section">
+            <div class="hero-content">
+                <p class="eyebrow">COMPUTER SCIENCE STUDENT</p>
+                <h1>Hi, I'm <span>Alagappan.</span></h1>
+                <h2>Learning, Building and Creating for the Web</h2>
+                <p class="hero-description">
+                    I'm a Computer Science student interested in programming,
+                    web development, and creating accessible, user-friendly
+                    digital experiences.
+                </p>
 
-            <p>
-                A Computer Science student passionate about
-                programming, web development, and exploring
-                new technologies.
-            </p>
+                <div class="hero-actions">
+                    <a class="button primary-button" href="projects.html">
+                        Explore my projects
+                    </a>
+                    <a class="button secondary-button" href="contact.html">
+                        Contact me
+                    </a>
+                </div>
+            </div>
 
-            <p>
-                Welcome to my portfolio, where I showcase
-                my technical interests, learning journey,
-                and development projects.
-            </p>
-
-            <p>
-                <a href="projects.html">Explore My Projects</a>
-            </p>
+            <div class="hero-card">
+                <div class="code-icon" aria-hidden="true">&lt;/&gt;</div>
+                <p class="card-label">CURRENTLY EXPLORING</p>
+                <h2>Web Development</h2>
+                <p>HTML · CSS · Java · Python</p>
+                <div class="status-line">
+                    <span class="status-dot"></span>
+                    Always learning something new
+                </div>
+            </div>
         </section>
 
-        <section aria-labelledby="about-heading">
-            <h2 id="about-heading">About Me</h2>
+        <section class="section">
+            <div class="section-heading">
+                <p class="eyebrow">A LITTLE ABOUT ME</p>
+                <h2>Turning ideas into projects</h2>
+                <p>
+                    I enjoy learning technical concepts and applying them
+                    through practical projects.
+                </p>
+            </div>
 
-            <p>
-                I enjoy learning how software works and using
-                programming to solve problems. I am continuously
-                developing my technical knowledge and practical skills.
-            </p>
+            <div class="card-grid three-columns">
+                <article class="info-card">
+                    <div class="card-icon" aria-hidden="true">💻</div>
+                    <h3>Programming</h3>
+                    <p>Practising programming fundamentals with Java and Python.</p>
+                </article>
 
-            <p>
-                My goal is to build useful, accessible, and
-                user-friendly applications while continuing
-                to grow as a developer.
-            </p>
+                <article class="info-card">
+                    <div class="card-icon" aria-hidden="true">🌐</div>
+                    <h3>Web Development</h3>
+                    <p>Building responsive websites with HTML, CSS, and JavaScript.</p>
+                </article>
 
-            <p>
-                <a href="about.html">Learn More About Me</a>
-            </p>
+                <article class="info-card">
+                    <div class="card-icon" aria-hidden="true">♿</div>
+                    <h3>Accessibility</h3>
+                    <p>Learning to make websites easier to navigate and use.</p>
+                </article>
+            </div>
         </section>
 
-        <section aria-labelledby="interests-heading">
-            <h2 id="interests-heading">What I Do</h2>
-
-            <article>
-                <h3>Programming</h3>
-                <p>
-                    Practising programming fundamentals,
-                    logical thinking, and problem-solving.
-                </p>
-            </article>
-
-            <article>
-                <h3>Web Development</h3>
-                <p>
-                    Learning to create structured web pages
-                    using semantic HTML and accessibility principles.
-                </p>
-            </article>
-
-            <article>
-                <h3>Continuous Learning</h3>
-                <p>
-                    Exploring new technologies and strengthening
-                    my knowledge through hands-on practice.
-                </p>
-            </article>
+        <section class="section callout">
+            <div>
+                <p class="eyebrow">HAVE A PROJECT IN MIND?</p>
+                <h2>Let's connect and learn together.</h2>
+            </div>
+            <a class="button primary-button" href="contact.html">Get in touch</a>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2026 Alagappan. All rights reserved.</p>
+    <footer class="site-footer">
+        <p>© 2026 Alagappan. All rights reserved.</p>
+        <a href="index.html">Back to top ↑</a>
     </footer>
 </body>
 </html>
