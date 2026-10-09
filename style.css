@@ -1,0 +1,423 @@
+/* =========================================================
+   ALAGAPPAN'S PORTFOLIO — MODERN, RESPONSIVE STYLE
+   Works with the existing index/about/projects/contact HTML.
+   ========================================================= */
+
+
+:root {
+    color-scheme: dark;
+    --page-bg: #08111f;
+    --surface: #101d30;
+    --surface-raised: #14243b;
+    --text: #f2f7ff;
+    --muted: #b5c3d8;
+    --accent: #55a6ff;
+    --accent-bright: #6de0ff;
+    --border: rgba(159, 190, 230, 0.18);
+    --shadow: 0 18px 45px rgba(0, 0, 0, 0.22);
+    --radius: 18px;
+    --content-width: 1080px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    line-height: 1.7;
+    color: var(--text);
+    background:
+        radial-gradient(ellipse at 12% 0%, rgba(40, 117, 230, 0.18), transparent 35rem),
+        radial-gradient(ellipse at 100% 30%, rgba(40, 210, 230, 0.08), transparent 30rem),
+        var(--page-bg);
+}
+
+/* Accessible skip link: hidden until focused */
+.skip-link {
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    z-index: 2000;
+    padding: 12px 18px;
+    color: #06101d;
+    background: var(--accent-bright);
+    border-radius: 10px;
+    font-weight: 800;
+    text-decoration: none;
+    transform: translateY(-160%);
+    transition: transform 180ms ease;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+    transform: translateY(0);
+    outline: 3px solid #ffffff;
+    outline-offset: 3px;
+}
+
+/* Navigation */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 14px 24px;
+    background: rgba(8, 17, 31, 0.88);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+nav {
+    width: min(100%, var(--content-width));
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+nav a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 17px;
+    color: var(--muted);
+    border: 1px solid transparent;
+    border-radius: 999px;
+    font-size: 0.94rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition:
+        color 180ms ease,
+        background-color 180ms ease,
+        border-color 180ms ease,
+        transform 180ms ease;
+}
+
+nav a:hover {
+    color: var(--text);
+    background: rgba(85, 166, 255, 0.11);
+    border-color: var(--border);
+    transform: translateY(-2px);
+}
+
+nav a[aria-current="page"] {
+    color: #06101d;
+    background: linear-gradient(120deg, var(--accent), var(--accent-bright));
+    font-weight: 800;
+}
+
+/* Main content and page intro */
+main {
+    width: min(calc(100% - 40px), var(--content-width));
+    min-height: 68vh;
+    margin: 0 auto;
+    padding: clamp(42px, 7vw, 88px) 0;
+    animation: content-enter 500ms ease both;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+    letter-spacing: -0.035em;
+}
+
+h1 {
+    max-width: 850px;
+    margin: 0 0 22px;
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    font-weight: 800;
+    background: linear-gradient(110deg, #ffffff 18%, #b8d9ff 56%, var(--accent-bright));
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+h2 {
+    margin: 0 0 20px;
+    font-size: clamp(1.65rem, 4vw, 2.4rem);
+    color: var(--text);
+}
+
+h3 {
+    margin: 0 0 10px;
+    font-size: 1.2rem;
+    color: #dceeff;
+}
+
+p {
+    max-width: 75ch;
+    margin: 0 0 18px;
+    color: var(--muted);
+    font-size: 1.02rem;
+}
+
+strong {
+    color: var(--text);
+}
+
+section {
+    margin: 0 0 28px;
+    padding: clamp(22px, 4vw, 36px);
+    background: linear-gradient(145deg, rgba(20, 36, 59, 0.88), rgba(13, 27, 46, 0.78));
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+section:first-of-type {
+    position: relative;
+    overflow: hidden;
+}
+
+section:first-of-type::after {
+    content: "";
+    position: absolute;
+    top: -85px;
+    right: -65px;
+    width: 210px;
+    height: 210px;
+    border: 1px solid rgba(109, 224, 255, 0.22);
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 22px rgba(109, 224, 255, 0.035),
+        0 0 0 44px rgba(109, 224, 255, 0.025);
+    pointer-events: none;
+}
+
+/* Links and buttons */
+a {
+    color: var(--accent-bright);
+    text-underline-offset: 4px;
+    transition: color 180ms ease;
+}
+
+main a:not(.skip-link) {
+    font-weight: 700;
+}
+
+main a:not(.skip-link):hover {
+    color: #ffffff;
+}
+
+main a[href$=".html"] {
+    display: inline-block;
+    margin: 4px 0;
+}
+
+button {
+    min-height: 46px;
+    padding: 12px 20px;
+    color: #06101d;
+    background: linear-gradient(120deg, var(--accent), var(--accent-bright));
+    border: 0;
+    border-radius: 12px;
+    font: inherit;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(85, 166, 255, 0.2);
+    transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(85, 166, 255, 0.3);
+    filter: brightness(1.07);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Project/article cards */
+article {
+    margin: 18px 0;
+    padding: 22px;
+    background: rgba(5, 15, 29, 0.45);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    transition:
+        transform 200ms ease,
+        border-color 200ms ease,
+        background-color 200ms ease;
+}
+
+article:hover {
+    transform: translateY(-4px);
+    border-color: rgba(109, 224, 255, 0.55);
+    background: rgba(20, 44, 72, 0.75);
+}
+
+ul {
+    padding-left: 1.4rem;
+    color: var(--muted);
+}
+
+li {
+    margin: 7px 0;
+    padding-left: 4px;
+}
+
+li::marker {
+    color: var(--accent-bright);
+}
+
+/* Contact form */
+form {
+    max-width: 720px;
+}
+
+.form-group {
+    margin: 0 0 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text);
+    font-weight: 700;
+}
+
+input,
+textarea {
+    display: block;
+    width: 100%;
+    padding: 13px 15px;
+    color: var(--text);
+    background: rgba(5, 15, 29, 0.75);
+    border: 1px solid rgba(159, 190, 230, 0.3);
+    border-radius: 12px;
+    font: inherit;
+    transition: border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #9eafc5;
+}
+
+input:hover,
+textarea:hover {
+    border-color: rgba(109, 224, 255, 0.6);
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--accent-bright);
+    background: rgba(10, 25, 44, 0.98);
+    box-shadow: 0 0 0 4px rgba(109, 224, 255, 0.14);
+}
+
+textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+/* Visible keyboard focus */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--accent-bright);
+    outline-offset: 4px;
+}
+
+/* Footer */
+footer {
+    margin-top: 36px;
+    padding: 28px 20px;
+    text-align: center;
+    background: rgba(4, 10, 19, 0.65);
+    border-top: 1px solid var(--border);
+}
+
+footer p {
+    margin: 0 auto;
+    font-size: 0.9rem;
+}
+
+/* Responsive layout */
+@media (min-width: 760px) {
+    main {
+        padding-top: 72px;
+    }
+
+    main > section:nth-of-type(n + 2) article {
+        display: inline-block;
+        vertical-align: top;
+        width: calc(50% - 13px);
+        min-height: 170px;
+    }
+
+    main > section:nth-of-type(n + 2) article:nth-of-type(odd) {
+        margin-right: 16px;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 10px 12px;
+    }
+
+    nav {
+        gap: 4px;
+    }
+
+    nav a {
+        padding: 9px 12px;
+        font-size: 0.88rem;
+    }
+
+    main {
+        width: min(calc(100% - 24px), var(--content-width));
+        padding: 32px 0;
+    }
+
+    section {
+        padding: 22px 18px;
+        border-radius: 15px;
+    }
+
+    article {
+        padding: 18px;
+    }
+
+    h1 {
+        font-size: clamp(2.25rem, 12vw, 3.5rem);
+    }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+@keyframes content-enter {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

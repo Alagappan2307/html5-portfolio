@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact | Alagappan's Portfolio</title>
+    <meta name="description" content="Get in touch with Alagappan through his personal portfolio.">
+
+    <!-- Connects this page to the CSS design -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">
+        Skip to main content
+    </a>
+
+    <header>
+        <nav aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html" aria-current="page">Contact</a>
+        </nav>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+        <section aria-labelledby="contact-heading">
+            <h1 id="contact-heading">Contact Me</h1>
+
+            <p>
+                Thank you for visiting my portfolio!
+                I'm interested in learning, collaborating on projects,
+                and connecting with people who share an interest
+                in technology.
+            </p>
+        </section>
+
+        <section aria-labelledby="message-heading">
+            <h2 id="message-heading">Send a Message</h2>
+
+            <p>
+                Fill in the form below to write a message.
+                A submission service must be connected before
+                messages can be delivered.
+            </p>
+
+            <form>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        autocomplete="name"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        autocomplete="email"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="5"
+                        required
+                    ></textarea>
+                </div>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Alagappan. All rights reserved.</p>
+    </footer>
+</body>
+</html>
